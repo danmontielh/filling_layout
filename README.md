@@ -11,7 +11,21 @@ Things you may want to cover:
 
 * Configuration
 
-* Vies, controllers and routes
+* Views, controllers and routes
+
+* User Model
+
+* Signup, Login and logot
+
+# Next Features
+
+* Advance Authentication
+
+* User activation
+
+* Micropost Users
+
+* Follow Users
 
 # Live demo
 
