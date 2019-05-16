@@ -4,6 +4,9 @@ class User < ApplicationRecord
 
     before_save :downcase_email
     before_create :create_activation_digest
+
+
+
     validates :name,  presence: true, length: { maximum: 50 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, length: { maximum: 255 },
@@ -41,8 +44,10 @@ class User < ApplicationRecord
         update_attribute(:remember_digest, nil)
     end
 
+     # Activates an account.
     def activate
-        update_columns(activated: FILL_IN, activated_at: FILL_IN)
+        update_attribute(:activated,    true)
+        update_attribute(:activated_at, Time.zone.now)
     end
 
     def send_activation_email
